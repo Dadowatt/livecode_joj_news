@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="mb-4">
+    Liste des catégories
+</h1>
+
+<div class="row">
+
+    {% for categorie in categories %}
+
+    <div class="col-md-6 col-lg-4 mb-4">
+
+        <div class="card h-100 shadow-sm border-0">
+
+            <div class="card-body">
+
+                <h3 class="card-title text-primary">
+                    {{ categorie.nom_categorie }}
+                </h3>
+
+                <p class="card-text text-muted">
+                    {{ categorie.description }}
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {% empty %}
+
+    <div class="col-12">
+
+        <div class="alert alert-info">
+            Aucune catégorie disponible.
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}
